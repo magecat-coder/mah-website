@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>~*~ My Retro Art Space ~*~</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <marquee scrollamount="5">Welcome to my digital gallery! Best viewed in Netscape Navigator at 800x600 resolution.</marquee>
+            <h1>~*~ My Retro Art Space ~*~</h1>
+        </header>
+
+        <div id="layout">
+            <nav id="sidebar">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="#" onclick="showPage('gallery')">[ Home / Gallery ]</a></li>
+                    <li><a href="#" onclick="showPage('about')">[ About the Artist ]</a></li>
+                    <li><a href="#" onclick="showPage('contact')">[ Contact Me ]</a></li>
+                </ul>
+                
+                <div class="badges">
+                    <p>Visitors:</p>
+                    <div class="hit-counter">001337</div>
+                </div>
+            </nav>
+
+            <main id="content">
+                
+                <section id="gallery" class="page active">
+                    <h2>Artwork Categories</h2>
+                    
+                    <div class="category">
+                        <h3>Digital Paintings</h3>
+                        <div class="art-grid">
+                            <div class="art-thumbnail" onclick="viewArtwork('Cyber City', 'A digital painting of a futuristic city inspired by Y2K aesthetics.', 'https://via.placeholder.com/400x300/000000/00FF00?text=Cyber+City')">
+                                <img src="https://via.placeholder.com/150/000000/00FF00?text=Cyber+City" alt="Cyber City thumbnail">
+                                <p>Cyber City</p>
+                            </div>
+                            <div class="art-thumbnail" onclick="viewArtwork('Starry Void', 'Exploring the emptiness of space using MS Paint techniques.', 'https://via.placeholder.com/400x300/000000/FF00FF?text=Starry+Void')">
+                                <img src="https://via.placeholder.com/150/000000/FF00FF?text=Starry+Void" alt="Starry Void thumbnail">
+                                <p>Starry Void</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category">
+                        <h3>Pixel Art</h3>
+                        <div class="art-grid">
+                            <div class="art-thumbnail" onclick="viewArtwork('Retro Potion', 'An 8-bit health potion sprite.', 'https://via.placeholder.com/400x300/000000/00FFFF?text=Retro+Potion')">
+                                <img src="https://via.placeholder.com/150/000000/00FFFF?text=Retro+Potion" alt="Retro Potion thumbnail">
+                                <p>Retro Potion</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="artwork-view" class="page hidden">
+                    <a href="#" onclick="showPage('gallery')"><< Back to Gallery</a>
+                    <h2 id="art-title">Artwork Title</h2>
+                    <img id="art-image" src="" alt="Full Artwork">
+                    <div class="description-box">
+                        <p id="art-desc">Artwork description goes here.</p>
+                    </div>
+                </section>
+
+                <section id="about" class="page hidden">
+                    <h2>About the Artist</h2>
+                    <img src="https://via.placeholder.com/150" alt="Artist Avatar" style="float: left; margin-right: 15px; border: 2px outset #C0C0C0;">
+                    <p>Hello! I am a digital artist heavily inspired by the early days of the world wide web. I love creating pieces that reflect the chaos, freedom, and neon colors of the 2000s.</p>
+                    <p>When I'm not drawing, you can find me coding custom HTML layouts, listening to vaporwave, and customizing my cursor.</p>
+                    <div style="clear: both;"></div>
+                </section>
+
+                <section id="contact" class="page hidden">
+                    <h2>Contact & Links</h2>
+                    <p>Leave me a message in my guestbook or send an email!</p>
+                    
+                    <form id="contact-form">
+                        <label for="name">Name / Handle:</label><br>
+                        <input type="text" id="name" name="name" required><br><br>
+                        
+                        <label for="email">E-mail address:</label><br>
+                        <input type="email" id="email" name="email" required><br><br>
+                        
+                        <label for="message">Message:</label><br>
+                        <textarea id="message" name="message" rows="5" required></textarea><br><br>
+                        
+                        <button type="submit">Send Message!</button>
+                    </form>
+
+                    <hr>
+                    
+                    <h3>My Other Links</h3>
+                    <ul>
+                        <li><a href="mailto:your-email@example.com">E-mail Me Directly</a></li>
+                        <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+                        <li><a href="https://twitter.com" target="_blank">Twitter / X</a></li>
+                        <li><a href="https://neocities.org" target="_blank">My Neocities Friend Page</a></li>
+                    </ul>
+                </section>
+
+            </main>
+        </div>
+        
+        <footer>
+            <p>&copy; 2026 My Retro Art Space. All rights reserved. Do not steal my art!</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
