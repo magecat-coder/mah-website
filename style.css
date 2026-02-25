@@ -1,0 +1,176 @@
+/* --- Global 2000s Styling --- */
+body {
+    background-color: #000000;
+    color: #00FF00; /* Hacker Green */
+    font-family: "Courier New", Courier, monospace;
+    margin: 0;
+    padding: 20px;
+    background-image: radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px);
+    background-size: 100px 100px; /* Simulated starry background */
+}
+
+a {
+    color: #FF00FF; /* Hot Pink */
+    text-decoration: underline;
+}
+
+a:hover {
+    background-color: #FF00FF;
+    color: #FFFFFF;
+}
+
+/* --- Layout --- */
+#container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #000080; /* Classic Navy */
+    border: 5px ridge #C0C0C0; /* 3D Border */
+    padding: 10px;
+}
+
+header {
+    text-align: center;
+    border-bottom: 3px dashed #FFFF00;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+marquee {
+    background-color: #FF0000;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 2px;
+}
+
+#layout {
+    display: flex;
+    gap: 20px;
+}
+
+/* --- Sidebar --- */
+#sidebar {
+    width: 200px;
+    background-color: #C0C0C0;
+    color: #000000;
+    border: 3px outset #FFFFFF;
+    padding: 10px;
+}
+
+#sidebar ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+#sidebar a {
+    color: #0000EE;
+}
+
+#sidebar a:hover {
+    background-color: #0000EE;
+    color: #FFFFFF;
+}
+
+.hit-counter {
+    background-color: #000000;
+    color: #FF0000;
+    font-family: "Impact", sans-serif;
+    text-align: center;
+    letter-spacing: 5px;
+    border: 2px inset #FFFFFF;
+    padding: 5px;
+}
+
+/* --- Main Content --- */
+#content {
+    flex-grow: 1;
+    background-color: #000000;
+    border: 3px inset #C0C0C0;
+    padding: 20px;
+}
+
+/* JS Utility Class */
+.hidden {
+    display: none !important;
+}
+
+.active {
+    display: block;
+}
+
+/* --- Gallery & Artworks --- */
+.category {
+    border: 1px dotted #00FF00;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.art-grid {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.art-thumbnail {
+    border: 2px solid #FF00FF;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #111;
+}
+
+.art-thumbnail:hover {
+    border-color: #FFFF00;
+    background-color: #333;
+}
+
+#artwork-view {
+    text-align: center;
+}
+
+#art-image {
+    max-width: 100%;
+    border: 5px ridge #C0C0C0;
+    margin: 15px 0;
+}
+
+.description-box {
+    background-color: #222;
+    padding: 15px;
+    border: 1px solid #00FF00;
+    text-align: left;
+}
+
+/* --- Forms --- */
+form {
+    background-color: #C0C0C0;
+    color: #000;
+    padding: 15px;
+    border: 3px outset #FFFFFF;
+}
+
+input, textarea {
+    width: 90%;
+    border: 2px inset #FFFFFF;
+    background-color: #FFF;
+}
+
+button {
+    background-color: #C0C0C0;
+    border: 2px outset #FFFFFF;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 15px;
+}
+
+button:active {
+    border: 2px inset #FFFFFF;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8em;
+    border-top: 1px solid #C0C0C0;
+    padding-top: 10px;
+}
