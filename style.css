@@ -36,7 +36,7 @@ header {
 }
 
 marquee {
-    background-color: #FF0000;
+    background-color: #FF139D;
     color: #FFFFFF;
     font-weight: bold;
     padding: 2px;
@@ -110,9 +110,16 @@ marquee {
     flex-wrap: wrap;
 }
 
-.art-thumbnail {
+.art-thumbnail img {
     border: 2px solid #FF00FF;
     padding: 5px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #111;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
     text-align: center;
     cursor: pointer;
     background-color: #111;
