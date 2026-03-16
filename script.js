@@ -38,4 +38,5 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     
     // Clear the form
     this.reset();
+
 });
