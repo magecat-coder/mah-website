@@ -3,61 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art Gallery Portfolio</title>
-    
+    <title>Art Gallery</title>
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://*.supabase.co https://cdn.jsdelivr.net; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.supabase.co;">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="nav-header">
-        <div class="nav-links">
-            <button onclick="showPage('home')">home</button>
-            <button onclick="showPage('gallery')">gallery</button>
-        </div>
-        <div class="auth-buttons">
-            <button id="login-btn" onclick="showPage('login-page')">log in</button>
-            <button id="signup-btn" onclick="showPage('signup-page')">sign up</button>
-            <button id="logout-btn" class="hidden">log out</button>
-        </div>
+    <div class="auth-container">
+        <button id="login-btn" onclick="showPage('login-view')">Log In</button>
+        <button id="signup-btn" onclick="showPage('signup-view')">Sign Up</button>
+        <button id="logout-btn" class="hidden">Log Out</button>
     </div>
 
-    <main id="main-container">
+    <div class="site-wrapper">
         
-        <section id="home" class="page">
-            <h1>Welcome to the Gallery</h1>
-        </section>
+        <div class="header-bar">eat the food</div>
+        <div class="banner-area">
+            <img src="welcome.gif" alt="Welcome" class="welcome-text"> 
+        </div>
+        
+        <div class="yellow-divider"></div>
 
-        <section id="gallery" class="page hidden">
-            <h2>Art Gallery</h2>
-            <div class="thumbnail-grid">
-                <div class="art-thumb" onclick="viewArtwork('Star Tail', 'A sketch of Shiny in a new outfit.', 'your-image-url.png')">
-                    <p>Click to view artwork</p>
+        <div class="layout-body">
+            
+            <div class="sidebar">
+                <p><strong>navigation ↓</strong></p>
+                <ul class="nav-links">
+                    <li><a href="#" onclick="showPage('gallery-view')">[ _home / gallery_ ]</a></li>
+                    <li><a href="#" onclick="showPage('about-view')">[ _about me_ ]</a></li>
+                    <li><a href="#" onclick="showPage('contacts-view')">[ _contacts_ ]</a></li>
+                </ul>
+                <p>Visitors:</p>
+                <div class="hit-counter">002005</div>
+            </div>
+
+            <div class="main-content">
+                
+                <div id="gallery-view" class="page">
+                    <h2 class="green-text">artwork categories</h2>
+                    
+                    <div class="category-box">
+                        <h3 class="green-text">digital art</h3>
+                        <img src="cat1.png" class="art-thumb" onclick="viewArtwork('Sketch 1', '...', 'cat1.png')">
+                        <img src="cat2.png" class="art-thumb" onclick="viewArtwork('Sketch 2', '...', 'cat2.png')">
+                    </div>
+
+                    <div class="category-box">
+                        <h3 class="green-text">traditional art</h3>
+                        <img src="trad1.png" class="art-thumb" onclick="viewArtwork('Paper Sketch', '...', 'trad1.png')">
+                    </div>
                 </div>
+
+                <div id="artwork-view" class="page hidden">
+                    <a href="#" onclick="showPage('gallery-view')" class="back-link">&lt;&lt; back to main</a>
+                    <br><br>
+                    <img id="art-image" src="" alt="Artwork" style="max-width: 100%; border: 3px solid #ff00ff;">
+                    <h3 id="art-title" class="green-text">Title</h3>
+                    <p id="art-desc" style="color: white;">Description</p>
+                </div>
+
+                <div id="signup-view" class="page hidden">
+                    <h2 class="green-text">Sign Up</h2>
+                    <form id="signup-form" class="retro-form">
+                        <p>e-mail address:</p>
+                        <input type="email" id="signup-email" required>
+                        <p>password:</p>
+                        <input type="password" id="signup-password" required>
+                        <br><br>
+                        <button type="submit">Create Account</button>
+                    </form>
+                </div>
+
+                <div id="login-view" class="page hidden">
+                    <h2 class="green-text">Log In</h2>
+                    <form id="login-form" class="retro-form">
+                        <p>e-mail address:</p>
+                        <input type="email" id="login-email" required>
+                        <p>password:</p>
+                        <input type="password" id="login-password" required>
+                        <br><br>
+                        <button type="submit">Log In</button>
+                    </form>
+                </div>
+
+                <div id="about-view" class="page hidden"><h2 class="green-text">About Me</h2></div>
+                <div id="contacts-view" class="page hidden"><h2 class="green-text">Contacts</h2></div>
+
             </div>
-        </section>
-
-        <section id="artwork-view" class="page hidden">
-            <button onclick="showPage('gallery')">&lt;&lt; back to gallery</button>
-            <div class="viewer-content">
-                <img id="art-image" src="" alt="Full Art">
-                <h3 id="art-title">Title</h3>
-                <p id="art-desc">Description</p>
-            </div>
-        </section>
-
-        <section id="signup-page" class="page hidden">
-            <button onclick="showPage('home')">&lt;&lt; back</button>
-            <form id="signup-form">
-                <h2>Sign Up</h2>
-                <input type="email" id="signup-email" placeholder="e-mail address" required>
-                <input type="password" id="signup-password" placeholder="password" required>
-                <button type="submit">create account</button>
-            </form>
-        </section>
-
-    </main>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
