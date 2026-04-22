@@ -44,8 +44,8 @@ function viewArtwork(title, description, imageSrc) {
 // 2. SUPABASE CONNECTION
 // ==========================================
 
-const supabaseUrl = 'https://tizxdmzubfogtszrvizb.supabase.co'; // Replace with your URL
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRpenhkbXp1YmZvZ3RzenJ2aXpiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY0Mzk4NTQsImV4cCI6MjA5MjAxNTg1NH0.raXXW-Hd_iBU1pzJa2nDmDxflzKZpsbfHzBjKjo0tfY'; // Replace with your Key
+const supabaseUrl = ''; // Replace with your URL
+const supabaseKey = ''; // Replace with your Key
 const _supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
 
