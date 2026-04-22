@@ -1,123 +1,145 @@
-/* ==========================================
-   1. BASE LAYOUT & HIGH CONTRAST VIBE
-   ========================================== */
+/* Base styling & Dotted Background */
 body {
     background-color: black;
-    /* Keeps your dotted background pattern */
-    background-image: radial-gradient(circle, #222 2px, transparent 2px); 
-    background-size: 30px 30px;
-    color: #00FF00; /* Classic neon green */
-    font-family: "Courier New", Courier, monospace; 
+    background-image: radial-gradient(circle, #555 2px, transparent 2px);
+    background-size: 40px 40px;
+    font-family: "Courier New", Courier, monospace;
     margin: 0;
-    padding: 30px;
+    padding: 20px;
 }
 
-/* ==========================================
-   2. THE MAGIC HIDDEN CLASS (CRITICAL FOR JS)
-   ========================================== */
+/* Hidden Utility Class */
 .hidden {
     display: none !important;
 }
 
-/* ==========================================
-   3. NAVIGATION BAR
-   ========================================== */
-.nav-header {
-    display: flex;
-    justify-content: space-between; /* Pushes nav left, auth right */
-    align-items: center;
-    border-bottom: 2px solid #00FF00;
-    padding-bottom: 15px;
-    margin-bottom: 30px;
+/* Floating Auth Buttons */
+.auth-container {
+    position: absolute;
+    top: 10px;
+    right: 20px;
 }
 
-/* ==========================================
-   4. RETRO BUTTON STYLING
-   ========================================== */
-button {
-    background-color: black;
-    color: #00FF00;
-    border: 2px solid #00FF00;
-    padding: 8px 16px;
-    margin: 0 5px;
+.auth-container button {
+    background-color: #000080;
+    color: #00ff00;
+    border: 1px solid white;
+    padding: 5px 10px;
     font-family: "Courier New", Courier, monospace;
+    cursor: pointer;
+}
+
+/* Main Layout Wrapper */
+.site-wrapper {
+    width: 800px;
+    margin: 40px auto 0 auto;
+    background-color: #000080; /* Dark Blue */
+    border: 2px solid white;
+}
+
+/* Header Elements */
+.header-bar {
+    background-color: #ff00ff; /* Hot Pink */
+    color: white;
     font-weight: bold;
-    text-transform: lowercase;
-    cursor: pointer;
-    transition: all 0.2s;
+    padding: 5px;
 }
 
-button:hover {
-    background-color: #00FF00;
-    color: black;
-}
-
-/* ==========================================
-   5. TYPOGRAPHY & FORMS
-   ========================================== */
-h1, h2, h3 {
-    text-transform: lowercase;
-    letter-spacing: 2px;
-}
-
-form {
-    border: 1px dashed #00FF00;
-    padding: 20px;
-    max-width: 300px;
-}
-
-input {
-    background-color: black;
-    color: #00FF00;
-    border: 1px solid #00FF00;
-    padding: 10px;
-    margin-bottom: 15px;
-    width: 90%;
-    font-family: "Courier New", Courier, monospace;
-    display: block;
-}
-
-input:focus {
-    outline: none;
-    background-color: #111;
-}
-
-/* ==========================================
-   6. ART GALLERY GRID
-   ========================================== */
-.thumbnail-grid {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.art-thumb {
-    border: 2px solid #00FF00;
-    padding: 10px;
-    cursor: pointer;
+.banner-area {
     text-align: center;
-    width: 200px;
+    padding: 20px 0;
 }
 
-.art-thumb img {
-    max-width: 100%;
-    height: auto;
+.yellow-divider {
+    border-bottom: 2px dashed yellow;
+}
+
+/* Flexbox for Columns */
+.layout-body {
+    display: flex;
+    min-height: 500px;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 200px;
+    background-color: #cccccc; /* Light Grey */
+    color: black;
+    padding: 15px;
+    border-right: 2px solid white;
+}
+
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-bottom: 10px;
+}
+
+.nav-links a {
+    color: blue;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    background-color: blue;
+    color: white;
+}
+
+.hit-counter {
+    background-color: black;
+    color: red;
+    font-family: monospace;
+    display: inline-block;
+    padding: 5px 10px;
+    border: 2px inset grey;
+}
+
+/* Main Content Styling */
+.main-content {
+    flex-grow: 1;
+    background-color: black;
+    padding: 20px;
+}
+
+.green-text {
+    color: #00ff00;
+}
+
+.category-box {
+    border: 1px dashed #00ff00;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+/* Pink Artwork Borders */
+.art-thumb {
+    border: 3px solid #ff00ff;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    cursor: pointer;
+    margin-right: 10px;
 }
 
 .art-thumb:hover {
-    background-color: #00FF00;
-    color: black;
+    border-color: white;
 }
 
-/* Viewer Screen */
-.viewer-content {
-    margin-top: 20px;
-    border: 1px solid #00FF00;
-    padding: 20px;
-    text-align: center;
+.back-link {
+    color: #ff00ff;
+    text-decoration: none;
 }
 
-#art-image {
-    max-width: 80%;
-    border: 2px solid #00FF00;
+.retro-form {
+    color: white;
+}
+
+.retro-form input {
+    background-color: #cccccc;
+    border: 2px inset grey;
+    padding: 5px;
+    font-family: inherit;
 }
