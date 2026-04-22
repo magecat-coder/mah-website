@@ -1,52 +1,33 @@
+// ==========================================
+// 1. CORE UI (Safe from database crashes)
+// ==========================================
+
 function showPage(pageId) {
-    console.log("Navigating to:", pageId); // Helps us see if the button clicks
-    
-    // Hide all sections with the class 'page'
+    // Hide all pages
     const pages = document.querySelectorAll('.page');
-    pages.forEach(page => {
-        page.classList.add('hidden');
-    });
+    pages.forEach(page => page.classList.add('hidden'));
     
-    // Show the section we want
-    const targetPage = document.getElementById(pageId);
-    if (targetPage) {
-        targetPage.classList.remove('hidden');
-    } else {
-        console.error("Could not find page with ID:", pageId);
+    // Show the requested page
+    const target = document.getElementById(pageId);
+    if (target) {
+        target.classList.remove('hidden');
     }
 }
 
-// Handles clicking a thumbnail to view the full art
-function viewArtwork(title, description, imageSrc) {
-    console.log("Viewing artwork:", title);
-    
-    // Grab the elements in the viewer
-    const artTitle = document.getElementById('art-title');
-    const artDesc = document.getElementById('art-desc');
-    const artImg = document.getElementById('art-image');
-
-    // Update them with the clicked art's info
-    if (artTitle) artTitle.textContent = title;
-    if (artDesc) artDesc.textContent = description;
-    if (artImg) artImg.src = imageSrc;
-    
-    // Switch to the viewer page
+function viewArtwork(title, description, src) {
+    document.getElementById('art-title').textContent = title;
+    document.getElementById('art-desc').textContent = description;
+    document.getElementById('art-image').src = src;
     showPage('artwork-view');
 }
 
-
 // ==========================================
-// 2. SUPABASE CONNECTION
+// 2. SUPABASE LOGIC
 // ==========================================
 
-const supabaseUrl = 'https://tizxdmzubfogtszrvizb.supabase.co'; // Replace with your URL
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRpenhkbXp1YmZvZ3RzenJ2aXpiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY0Mzk4NTQsImV4cCI6MjA5MjAxNTg1NH0.raXXW-Hd_iBU1pzJa2nDmDxflzKZpsbfHzBjKjo0tfY'; // Replace with your Key
+const supabaseUrl = 'https://YOUR_PROJECT_ID.supabase.co'; // Insert your URL
+const supabaseKey = 'YOUR_ANON_PUBLIC_KEY'; // Insert your Key
 const _supabase = supabase.createClient(supabaseUrl, supabaseKey);
-
-
-// ==========================================
-// 3. AUTHENTICATION UI & LOGIC
-// ==========================================
 
 async function updateAuthUI() {
     const { data: { session } } = await _supabase.auth.getSession();
@@ -65,26 +46,49 @@ async function updateAuthUI() {
     }
 }
 
-// Signup Form Handler
+// Signup Handling
 const signupForm = document.getElementById('signup-form');
 if (signupForm) {
     signupForm.addEventListener('submit', async (e) => {
-        e.preventDefault(); // STOPS the "Failed to Fetch" Neocities reload error
-        
+        e.preventDefault(); 
         const email = document.getElementById('signup-email').value;
         const password = document.getElementById('signup-password').value;
 
-        const { data, error } = await _supabase.auth.signUp({ email, password });
-
-        if (error) {
-            alert("Error: " + error.message);
-        } else {
-            alert("Success! Please check your email to confirm.");
-            showPage('home');
+        const { error } = await _supabase.auth.signUp({ email, password });
+        if (error) alert("Error: " + error.message);
+        else {
+            alert("Success! Check your email.");
+            showPage('gallery-view');
         }
     });
 }
 
-// Initialize the Auth UI
+// Login Handling
+const loginForm = document.getElementById('login-form');
+if (loginForm) {
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault(); 
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
+
+        const { error } = await _supabase.auth.signInWithPassword({ email, password });
+        if (error) alert("Error: " + error.message);
+        else {
+            alert("Logged in!");
+            showPage('gallery-view');
+        }
+    });
+}
+
+// Logout Handling
+const logoutBtn = document.getElementById('logout-btn');
+if (logoutBtn) {
+    logoutBtn.addEventListener('click', async () => {
+        await _supabase.auth.signOut();
+        showPage('gallery-view');
+    });
+}
+
+// Start
 updateAuthUI();
 _supabase.auth.onAuthStateChange(() => updateAuthUI());
