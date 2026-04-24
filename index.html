@@ -1,39 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https://*; connect-src 'self' https://* wss://*; img-src 'self' data: https://*;">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>the dream hub ꩜</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https://*; connect-src 'self' https://* wss://*; img-src 'self' data: https://*;">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <div id="auth-buttons">
-    <div id="logged-out-ui">
-        <button onclick="showPage('login')">Log In</button>
-        <button onclick="showPage('signup')">Sign Up</button>
-    </div>
-    
-    <div id="logged-in-ui" class="hidden">
-        <button onclick="handleLogout()">Log Out</button>
-    </div>
-</div>
-    
-    
-    
     <div id="container">
         <header>
-            <marquee scrollamount="6">why do they call it oven when you of in the cold food of out hot eat the food</marquee>
-            <h1> <img src="assets/images/welcome1.gif" alt="welcome1"> </h1>
+            <marquee scrollamount="10">why do they call it oven when you of in the cold food of out hot eat the food</marquee>
+            <h1> <img src="/Downloads/mah-website-main/mah-website-main//images/welcome1.gif" alt="welcome1"> </h1>
         </header>
 
         <div id="layout">
             <nav id="sidebar">
-                <h3>navigation ↓</h3>
+                <h3>Navigation ↓</h3>
                 <ul>
-                    <li><a href="#" onclick="showPage('gallery')">[ home / gallery ]</a></li>
-                    <li><a href="#" onclick="showPage('about')">[ about me ]</a></li>
-                    <li><a href="#" onclick="showPage('contact')">[ contacts ]</a></li>
+                    <li><a href="#" onclick="showPage('gallery')">[ Home / Gallery ]</a></li>
+                    <li><a href="#" onclick="showPage('about')">[ About the Artist ]</a></li>
+                    <li><a href="#" onclick="showPage('contact')">[ Contact Me ]</a></li>
+                </ul>
+                
+                <h3 style="margin-top: 20px;">Members ↓</h3>
+                <ul id="logged-out-nav">
+                    <li><a href="#" onclick="showPage('login-view')">[ Log In ]</a></li>
+                    <li><a href="#" onclick="showPage('signup-view')">[ Sign Up ]</a></li>
+                </ul>
+                <ul id="logged-in-nav" class="hidden">
+                    <li><a href="#" id="logout-btn">[ Log Out ]</a></li>
                 </ul>
                 
                 <div class="badges">
@@ -43,145 +39,109 @@
             </nav>
 
             <main id="content">
-                <section id="login" class="page hidden">
-    <a href="#" onclick="showPage('gallery')"><< back to main</a>
-    <h2>log in</h2>
-    
-    <form id="login-form">
-        <label for="login-email">e-mail address:</label><br>
-        <input type="email" id="login-email" name="login-email" required><br><br>
-        
-        <label for="login-password">password:</label><br>
-        <input type="password" id="login-password" name="login-password" required><br><br>
-        
-        <button type="submit">log in</button>
-    </form>
-</section>
-
-<section id="signup" class="page hidden">
-    <a href="#" onclick="showPage('gallery')"><< back to main</a>
-    <h2>sign up</h2>
-    
-    <form id="signup-form">
-        <label for="signup-email">e-mail address:</label><br>
-        <input type="email" id="signup-email" name="signup-email" required><br><br>
-        
-        <label for="signup-password">password:</label><br>
-        <input type="password" id="signup-password" name="signup-password" required><br><br>
-        
-        <button type="submit">create account</button>
-    </form>
-</section>
+                
                 <section id="gallery" class="page active">
-                    <h2>artwork categories</h2>
-                    
+                    <h2>Artwork Categories</h2>
                     <div class="category">
-                        <h3>digital art</h3>
+                        <h3>Digital Art</h3>
                         <div class="art-grid">
-                            <div class="art-thumbnail" onclick="viewArtwork('bald shiny', ':trol:', 'assets/images/shiny is bald.png')">
-                                <img src="assets/images/shiny is bald.png">
+                            <div class="art-thumbnail" onclick="viewArtwork('bald shiny', ':trol:', '/Downloads/mah-website-main/mah-website-main/images/shiny is bald.png')">
+                                <img src="/Downloads/mah-website-main/mah-website-main/images/shiny is bald.png">
                             </div>
-                            <div class="art-thumbnail" onclick="viewArtwork('cool, rad shiny', 'initially, just drawing shiny in BFs outfit', 'assets/images/rad shiny.png')">
-                                <img src="assets/images/rad shiny thumbnail.png" alt="rad shiny thumbnail">
+                            <div class="art-thumbnail" onclick="viewArtwork('cool, rad shiny', 'initially, just drawing shiny in an outfit from somewhere..', '/Downloads/mah-website-main/mah-website-main/images/rad shiny.png')">
+                                <img src="/Downloads/mah-website-main/mah-website-main/images/rad shiny thumbnail.png" alt="rad shiny thumbnail">
                             </div>
                         </div>
                     </div>
-
                     <div class="category">
-                        <h3>traditional art</h3>
+                        <h3>Traditional Art</h3>
                         <div class="art-grid">
-                            <div class="art-thumbnail" onclick="viewArtwork('perspective practice', 'some practice during a lil therapy session (yes its shiny again, lol)', 'assets/images/paper shiny art.jpg')">
-                                <img src="assets/images/paper art shiny thumbnail.png" alt="paper art shiny thumbnail">
+                            <div class="art-thumbnail" onclick="viewArtwork('perspective practice', 'some practice during a therapy session. (yes its shiny again, lol)', '/Downloads/mah-website-main/mah-website-main/images/paper shiny art.jpg')">
+                                <img src="/Downloads/mah-website-main/mah-website-main/images/paper art shiny thumbnail.png" alt="paper art shiny thumbnail">
                             </div>
                         </div>
                     </div>
                 </section>
 
                 <section id="artwork-view" class="page hidden">
-                    <a href="#" onclick="showPage('gallery')"><< back to gallery</a>
+                    <a href="#" onclick="showPage('gallery')"><< Back to Gallery</a>
                     <h2 id="art-title">Artwork Title</h2>
                     <img id="art-image" src="" alt="Full Artwork">
                     <div class="description-box">
-                    <div id="comments-section" class="hidden">
-    <hr>
-    <h3>System Comments</h3>
-    
-    <div id="comments-wrapper" class="hidden">
-    <br>
-    <div style="border-top: 1px dashed #00FF00; padding-top: 10px;">
-        <h3 style="color: #00FF00; margin-bottom: 10px;">> User Comments_</h3>
-        
-        <div id="comment-list" style="max-height: 200px; overflow-y: auto; margin-bottom: 15px; padding: 5px; border: 1px solid #333;">
-            <p style="color: #666;">Loading database...</p>
-        </div>
-
-        <form id="comment-form">
-            <textarea id="comment-input" required placeholder="Transmit a message..." style="width: 95%; background: black; color: #00FF00; border: 1px solid #00FF00; padding: 5px; font-family: monospace;"></textarea>
-            <br>
-            <button type="submit" style="margin-top: 5px; background: #0000AA; color: white; border: 2px outset #FFF; cursor: pointer;">Post Comment</button>
-        </form>
-    </div>
-</div>
-
-<div id="comments-locked">
-    <br>
-    <div style="border-top: 1px dashed #FF0000; padding-top: 10px;">
-        <p style="color: #FF0000; font-family: monospace;">
-            [ ERROR: ACCESS DENIED. LOGIN REQUIRED TO VIEW OR POST COMMENTS. ]
-        </p>
-    </div>
-</div>
-</div>
                         <p id="art-desc">Artwork description goes here.</p>
+                    </div>
+
+                    <div id="comments-container">
+                        <h3>// user comments</h3>
+                        
+                        <div id="comments-locked">
+                            <p>🔒 you must be logged in to view and post comments.</p>
+                            <button onclick="showPage('login-view')">log in here</button>
+                        </div>
+
+                        <div id="comments-unlocked" class="hidden">
+                            <div id="comment-list">
+                                </div>
+                            <form id="comment-form">
+                                <textarea id="comment-input" rows="3" placeholder="say something cool..." required></textarea><br>
+                                <button type="submit">post comment</button>
+                            </form>
+                        </div>
                     </div>
                 </section>
 
+                <section id="login-view" class="page hidden">
+                    <h2>Log In</h2>
+                    <form id="login-form">
+                        <label>E-mail:</label><br>
+                        <input type="email" id="login-email" required><br><br>
+                        <label>Password:</label><br>
+                        <input type="password" id="login-password" required><br><br>
+                        <button type="submit">Access System</button>
+                    </form>
+                </section>
+
+                <section id="signup-view" class="page hidden">
+                    <h2>Sign Up</h2>
+                    <form id="signup-form">
+                        <label>E-mail:</label><br>
+                        <input type="email" id="signup-email" required><br><br>
+                        <label>Password:</label><br>
+                        <input type="password" id="signup-password" required><br><br>
+                        <button type="submit">Create Account</button>
+                    </form>
+                </section>
+
                 <section id="about" class="page hidden">
-                    <h2>about the artist (me)...</h2>
-                    <img src="assets/images/katia-noddin.gif" alt="Artist Avatar" style="float: left; margin-right: 15px; border: 2px outset #C0C0C0;">
-                    <p>ello! the name's <em>shiny<em>, or.. <em>dreamcastshiny<em>. i am an artist, that usually draws when i want to. my favorite games range from Final Fantasy VII, Smash Bros., Cave Story, Sonic Rush, and the list goes on.</p>
+                    <h2>About the Artist (me)...</h2>
+                    <img src="/Downloads/mah-website-main/mah-website-main/images/katia-noddin.gif" alt="Artist Avatar" style="float: left; margin-right: 15px; border: 2px outset #C0C0C0;">
+                    <p>ello! the name's <em>shiny</em>, or.. <em>dreamcastshiny</em>. i am an artist, that usually draws when i want to. my favorite games range from Final Fantasy VII, Smash Bros., Cave Story, Sonic Rush, and the list goes on.</p>
                     <p>favorite music genres are: dnb, house, jazz fusion, etc.</p>
                     <div style="clear: both;"></div>
                 </section>
 
                 <section id="contact" class="page hidden">
-                    <h2>contacts & linksss (still a work in progress)</h2>
+                    <h2>Contact & Links</h2>
                     <p>leave a message, if ya want, ain't forcing ya too Bp</p>
-                    
                     <form id="contact-form">
-                        <label for="name">name / handle:</label><br>
-                        <input type="text" id="name" name="name" required><br><br>
-                        
-                        <label for="email">e-mail address:</label><br>
-                        <input type="email" id="email" name="email" required><br><br>
-                        
-                        <label for="message">message:</label><br>
-                        <textarea id="message" name="message" rows="5" required></textarea><br><br>
-                        
-                        <button type="submit">send messaaaage!</button>
+                        <label>Name / Handle:</label><br>
+                        <input type="text" required><br><br>
+                        <label>E-mail address:</label><br>
+                        <input type="email" required><br><br>
+                        <label>Message:</label><br>
+                        <textarea rows="5" required></textarea><br><br>
+                        <button type="submit">Send Message!</button>
                     </form>
-
-                    <hr>
-                    
-                    <h3>my other links</h3>
-                    <ul>
-                        <li><a href="mailto:elija.hendy05@example.com">E-mail Me Directly</a></li>
-                        <li><a href="assets/images/tro.png" target="_blank">Instagram</a></li>
-                        <li><a href="assets/images/tro.png" target="_blank">Twitter</a></li>
-                    </ul>
                 </section>
 
             </main>
         </div>
-        
         <footer>
-            <p>&copy; all rights reserved. do not steal my art! Xp</p>
+            <p>&copy; All rights reserved. Do not steal my art! Xp</p>
         </footer>
     </div>
     
-   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
