@@ -248,3 +248,56 @@ footer {
     border: 2px inset #FFF;
     padding: 5px;
 }
+/* --- Gated Comment Section --- */
+#comments-container {
+    margin-top: 20px;
+    background-color: #111;
+    border: 2px dashed #00FF00;
+    padding: 15px;
+    text-align: left;
+}
+
+#comments-container h3 {
+    margin-top: 0;
+    color: #FF00FF;
+    border-bottom: 1px solid #FF00FF;
+    padding-bottom: 5px;
+}
+
+#comments-locked {
+    text-align: center;
+    padding: 20px;
+    color: #FFFF00;
+}
+
+#comment-list {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #000;
+    border: 1px inset #C0C0C0;
+}
+
+.user-comment {
+    border-bottom: 1px dotted #333;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.user-comment span.author {
+    color: #FFFF00;
+    font-weight: bold;
+}
+
+.user-comment span.text {
+    color: #FFF;
+    display: block;
+    margin-top: 5px;
+}
+
+#comment-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
