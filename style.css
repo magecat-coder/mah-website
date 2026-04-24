@@ -118,19 +118,15 @@ marquee {
 .art-thumbnail img {
     border: 2px solid #FF00FF;
     padding: 5px;
-    text-align: center;
-    cursor: pointer;
     background-color: #111;
     width: 150px;
     height: 150px;
     object-fit: cover;
-}
     text-align: center;
     cursor: pointer;
-    background-color: #111;
 }
 
-.art-thumbnail:hover {
+.art-thumbnail:hover img {
     border-color: #FFFF00;
     background-color: #333;
 }
