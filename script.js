@@ -34,11 +34,16 @@ function viewArtwork(title, description, imageSrc) {
     document.getElementById('art-image').src = imageSrc;
     showPage('artwork-view');
     
+    // Un-hide the main comment container
+    const commentSection = document.getElementById('comments-section');
+    if (commentSection) {
+        commentSection.classList.remove('hidden');
+    }
+    
     if (typeof checkCommentAccess === "function") {
         checkCommentAccess(title);
     }
 }
-
 // --- 4. AUTH STATE MANAGER ---
 async function updateAuthUI() {
     const { data: { session } } = await _supabase.auth.getSession();
