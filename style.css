@@ -1,3 +1,8 @@
+/* GLOBAL UTILITIES */
+.hidden {
+    display: none !important;
+}
+
 /* --- Global 2000s Styling --- */
 body {
     background-color: #000000;
@@ -180,4 +185,66 @@ footer {
     font-size: 0.8em;
     border-top: 1px solid #C0C0C0;
     padding-top: 10px;
+}
+
+/* --- Auth Buttons (Top Right) --- */
+#auth-buttons {
+    position: absolute; /* Breaks them out of the normal layout */
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000; /* Keeps them layered on top of the starry background */
+}
+
+#auth-buttons button {
+    background-color: #000080; /* Matches your navy container */
+    color: #00FF00; /* Hacker green text */
+    border: 3px outset #C0C0C0; /* Classic 2000s 3D border */
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+#auth-buttons button:hover {
+    background-color: #FF00FF; /* Turns hot pink when hovered */
+    color: #FFFFFF;
+    border-style: inset; /* Makes the button look 'pressed' */
+}
+
+/* --- Comment Section Styling --- */
+#comments-section {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px dashed #00FF00;
+    background-color: #000;
+    text-align: left;
+}
+
+#comment-list {
+    margin-bottom: 20px;
+    max-height: 300px;
+    overflow-y: scroll;
+    border: 1px inset #C0C0C0;
+    padding: 10px;
+}
+
+.comment-item {
+    border-bottom: 1px solid #333;
+    padding: 5px 0;
+    font-size: 0.9em;
+}
+
+.comment-author {
+    color: #FFFF00; /* Bright Yellow for usernames */
+    font-weight: bold;
+}
+
+#comment-body {
+    width: 95%;
+    background: #FFF;
+    color: #000;
+    border: 2px inset #FFF;
+    padding: 5px;
 }
